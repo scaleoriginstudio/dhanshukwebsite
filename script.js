@@ -27,6 +27,7 @@ const observer = new IntersectionObserver(
 fadeElements.forEach(el => observer.observe(el));
 
 // Timeline scroll animation
+// Timeline scroll animation
 const section = document.querySelector('.how-it-works');
 const dots = document.querySelectorAll('.timeline-dot');
 const line = document.querySelector('.timeline-line');
@@ -59,8 +60,10 @@ function updateTimeline() {
   const percentage = (currentStep / (dots.length - 1)) * 100;
   
   if (isMobile) {
-    // Vertical line for mobile
-    line.style.height = `${percentage}%`;
+    // On mobile, show all steps and make all dots active
+    dots.forEach(dot => dot.classList.add('active'));
+    steps.forEach(step => step.classList.add('active'));
+    line.style.height = '100%';
     line.style.width = '2px';
   } else {
     // Horizontal line for desktop
@@ -69,40 +72,42 @@ function updateTimeline() {
   }
 }
 
-window.addEventListener('wheel', (e) => {
-  if (!section) return;
+// Only enable scroll animation on desktop
+if (window.innerWidth > 768) {
+  window.addEventListener('wheel', (e) => {
+    if (!section) return;
 
-  const rect = section.getBoundingClientRect();
+    const rect = section.getBoundingClientRect();
 
-  // Check if the section is in the middle of viewport
-  const isActive =
-    rect.top < window.innerHeight * 0.5 &&
-    rect.bottom > window.innerHeight * 0.5;
+    // Check if the section is in the middle of viewport
+    const isActive =
+      rect.top < window.innerHeight * 0.5 &&
+      rect.bottom > window.innerHeight * 0.5;
 
-  if (!isActive) return;
+    if (!isActive) return;
 
-  if (locked) return;
+    if (locked) return;
 
-  // Determine if we should animate
-  const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
-  const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
+    // Determine if we should animate
+    const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
+    const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
 
-  // Only prevent default if we're actually animating
-  if (shouldScrollDown || shouldScrollUp) {
-    e.preventDefault();
-    locked = true;
+    // Only prevent default if we're actually animating
+    if (shouldScrollDown || shouldScrollUp) {
+      e.preventDefault();
+      locked = true;
 
-    if (shouldScrollDown) {
-      currentStep++;
-    } else if (shouldScrollUp) {
-      currentStep--;
+      if (shouldScrollDown) {
+        currentStep++;
+      } else if (shouldScrollUp) {
+        currentStep--;
+      }
+
+      updateTimeline();
+      setTimeout(() => locked = false, 450);
     }
-
-    updateTimeline();
-    setTimeout(() => locked = false, 450);
-  }
-  // If we don't prevent default, normal scrolling continues
-}, { passive: false });
+  }, { passive: false });
+}
 
 // Handle window resize
 window.addEventListener('resize', () => {
@@ -111,7 +116,6 @@ window.addEventListener('resize', () => {
 
 // Initialize on load
 updateTimeline();
-// Add to script.js
 
 // FAQ Accordion
 const faqItems = document.querySelectorAll('.faq-item');
