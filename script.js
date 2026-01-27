@@ -26,8 +26,7 @@ const observer = new IntersectionObserver(
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Timeline scroll animation
-// Timeline scroll animation
+// Timeline scroll animation - FIXED FOR MOBILE
 const section = document.querySelector('.how-it-works');
 const dots = document.querySelectorAll('.timeline-dot');
 const line = document.querySelector('.timeline-line');
@@ -60,10 +59,8 @@ function updateTimeline() {
   const percentage = (currentStep / (dots.length - 1)) * 100;
   
   if (isMobile) {
-    // On mobile, show all steps and make all dots active
-    dots.forEach(dot => dot.classList.add('active'));
-    steps.forEach(step => step.classList.add('active'));
-    line.style.height = '100%';
+    // Vertical line for mobile
+    line.style.height = `${percentage}%`;
     line.style.width = '2px';
   } else {
     // Horizontal line for desktop
@@ -72,50 +69,84 @@ function updateTimeline() {
   }
 }
 
-// Only enable scroll animation on desktop
-if (window.innerWidth > 768) {
-  window.addEventListener('wheel', (e) => {
-    if (!section) return;
-
-    const rect = section.getBoundingClientRect();
-
-    // Check if the section is in the middle of viewport
-    const isActive =
-      rect.top < window.innerHeight * 0.5 &&
-      rect.bottom > window.innerHeight * 0.5;
-
-    if (!isActive) return;
-
-    if (locked) return;
-
-    // Determine if we should animate
-    const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
-    const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
-
-    // Only prevent default if we're actually animating
-    if (shouldScrollDown || shouldScrollUp) {
-      e.preventDefault();
-      locked = true;
-
-      if (shouldScrollDown) {
-        currentStep++;
-      } else if (shouldScrollUp) {
-        currentStep--;
+// FIXED: Enable scroll animation for both mobile and desktop
+function initScrollAnimation() {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Mobile: Use Intersection Observer for scroll-based animation
+    const stepObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const stepIndex = Array.from(steps).indexOf(entry.target);
+            if (stepIndex !== -1 && stepIndex !== currentStep) {
+              currentStep = stepIndex;
+              updateTimeline();
+            }
+          }
+        });
+      },
+      { 
+        threshold: 0.5,
+        rootMargin: '-20% 0px -20% 0px'
       }
+    );
+    
+    steps.forEach(step => stepObserver.observe(step));
+    
+  } else {
+    // Desktop: Use wheel event for scroll hijacking
+    window.addEventListener('wheel', (e) => {
+      if (!section) return;
 
-      updateTimeline();
-      setTimeout(() => locked = false, 450);
-    }
-  }, { passive: false });
+      const rect = section.getBoundingClientRect();
+
+      // Check if the section is in the middle of viewport
+      const isActive =
+        rect.top < window.innerHeight * 0.5 &&
+        rect.bottom > window.innerHeight * 0.5;
+
+      if (!isActive) return;
+
+      if (locked) return;
+
+      // Determine if we should animate
+      const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
+      const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
+
+      // Only prevent default if we're actually animating
+      if (shouldScrollDown || shouldScrollUp) {
+        e.preventDefault();
+        locked = true;
+
+        if (shouldScrollDown) {
+          currentStep++;
+        } else if (shouldScrollUp) {
+          currentStep--;
+        }
+
+        updateTimeline();
+        setTimeout(() => locked = false, 450);
+      }
+    }, { passive: false });
+  }
 }
 
 // Handle window resize
+let resizeTimer;
 window.addEventListener('resize', () => {
-  updateTimeline();
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    updateTimeline();
+    // Reinitialize scroll animation if switching between mobile/desktop
+    initScrollAnimation();
+  }, 250);
 });
 
 // Initialize on load
 updateTimeline();
+initScrollAnimation();
 
 // FAQ Accordion
 const faqItems = document.querySelectorAll('.faq-item');
