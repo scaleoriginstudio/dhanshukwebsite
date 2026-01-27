@@ -1,0 +1,624 @@
+/* ===================================
+   MOBILE STYLES - mobilestyles.css
+   Dhanshuk Ltd
+   =================================== */
+
+@media (max-width: 768px) {
+  
+  /* Typography Adjustments */
+  :root {
+    --header-one-font-size: 3.5rem;
+    --header-two-font-size: 1.8rem;
+    --header-three-font-size: 1.4rem;
+    --paragraph-font-size: 0.9rem;
+  }
+
+  /* Header */
+  .site-header {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  /* Explainer Video */
+  .explainer-video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .video-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  /* Post Video CTA */
+  .post-video-cta {
+    width: 90%;
+    margin: 4rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  .post-video-cta h2.hero-p {
+    font-size: calc(var(--paragraph-font-size) * 1.4);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .primary-btn {
+    width: 100%;
+    padding: 12px 32px;
+    font-size: 0.95rem;
+  }
+/* Modal Mobile Styles */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .modal-form-wrapper {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .modal-form-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-close .material-symbols-outlined {
+    font-size: 20px;
+  }
+}
+  /* Second Scroll Section */
+  .secondscroll-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .secondscroll-text {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .secondscroll-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .secondscroll-media {
+    min-height: 300px;
+  }
+
+  /* Why Us Section */
+  .why-us {
+    padding: 4rem 1rem;
+  }
+
+  .whyus-heading h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .whyus-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .whyus-item {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .whyus-icon {
+    font-size: 45px !important;
+  }
+
+  .whyus-item h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 4rem 1rem;
+  }
+
+  .services-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon {
+    font-size: 42px !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* How It Works - Simplified for Mobile */
+  /* How It Works - Vertical Timeline for Mobile */
+.how-it-works {
+  height: 300vh;
+  padding: 0;
+}
+
+.hiw-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw-heading {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hiw-grid {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: auto;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+/* Timeline - Vertical on left */
+.hiw-timeline {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* Vertical base line */
+.timeline-base {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--color-dark);
+  opacity: 0.15;
+  transform: translateX(-50%);
+}
+
+/* Vertical animated line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 0%;
+  background: var(--color-accent);
+  transition: height 0.4s ease;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Dots positioned vertically */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  background: var(--color-light);
+  border: 2px solid var(--color-dark);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-dot[data-step="0"] { 
+  left: 50%;
+  top: 0%; 
+}
+.timeline-dot[data-step="1"] { 
+  left: 50%;
+  top: 50%; 
+}
+.timeline-dot[data-step="2"] { 
+  left: 50%;
+  top: 100%; 
+}
+
+.timeline-dot.active {
+  opacity: 1;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Heading spans both columns */
+.hiw-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* Steps on the right */
+.hiw-step {
+  grid-column: 2;
+  text-align: left;
+  padding: 1.5rem;
+  /* background: var(--color-body-bg); */
+  border-radius: 12px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.hiw-step.active {
+  opacity: 1;
+}
+
+.hiw-step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hiw-step p {
+  font-size: 0.95rem;
+}
+
+.hiw-step:nth-child(2) { grid-row: 2; }
+.hiw-step:nth-child(3) { grid-row: 3; }
+.hiw-step:nth-child(4) { grid-row: 4; }
+  /* Comparison Section - Complete Redesign */
+  .comparison-section {
+    padding: 4rem 1rem;
+  }
+
+  .comparison-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .comparison-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  /* Hide original header */
+  .comparison-header {
+    display: none;
+  }
+
+  /* Each comparison becomes a card with category name as header */
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  /* Category label spans both columns as header */
+  .comparison-cell.label {
+    grid-column: 1 / -1;
+    background: transparent;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    border: none;
+    position: relative;
+  }
+
+  .comparison-cell.label::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  /* Traditional vs Dhanshuk cards side by side */
+  .comparison-cell:not(.label) {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+    border: none;
+    position: relative;
+  }
+
+  /* Traditional card (first after label) */
+  .comparison-row .comparison-cell:nth-child(2) {
+    background: rgba(55, 52, 53, 0.05);
+    color: rgba(55, 52, 53, 0.7);
+  }
+
+  .comparison-row .comparison-cell:nth-child(2)::before {
+    content: "Traditional";
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    color: rgba(55, 52, 53, 0.5);
+  }
+
+  /* Dhanshuk card (highlight) */
+  .comparison-cell.highlight {
+    background: var(--color-accent);
+    color: var(--color-light);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(237, 50, 55, 0.2);
+  }
+
+  .comparison-cell.highlight::before {
+    content: "Dhanshuk";
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Remove any before content rules from earlier */
+  .comparison-cell:not(.label)::after {
+    content: none;
+  }
+
+  /* Industries Carousel */
+  .industries-carousel {
+    padding: 2rem 0;
+  }
+
+  .carousel-item {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 4rem 1rem;
+  }
+
+  .faq-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-list {
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .faq-question {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .faq-icon {
+    font-size: 24px !important;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+  }
+
+  /* Contact Form Section */
+  .contact-section {
+    background-attachment: scroll;
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+
+  .glass-form-wrapper {
+    padding: 2.5rem 1.75rem;
+    border-radius: 24px;
+  }
+
+  .glass-form-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .form-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .contact-form {
+    gap: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .form-status {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-container {
+    padding: 0 1rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-brand {
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    height: 40px;
+  }
+
+  .footer-tagline {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  .footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-column ul {
+    gap: 0.6rem;
+  }
+
+  .footer-column ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer-social {
+    margin-top: 0.75rem;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-social .material-symbols-outlined {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+  }
+
+  /* Fade-in animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small Mobile (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  :root {
+    --header-one-font-size: 3rem;
+    --header-two-font-size: 1.6rem;
+  }
+
+  .post-video-cta h2.hero-p {
+    font-size: calc(var(--paragraph-font-size) * 1.2);
+  }
+
+  .whyus-item,
+  .service-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .glass-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Comparison - Stack on very small screens */
+  .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .comparison-cell:not(.label) {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hiw-sticky {
+    padding: 3rem 0;
+  }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+}

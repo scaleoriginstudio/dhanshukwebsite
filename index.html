@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Dhanshuk Ltd | Air Logistics for D2C Brands</title>
+  <meta name="description" content="Dhanshuk Ltd provides fast, reliable air logistics solutions for D2C brands across global markets. Built for speed, scale, and certainty.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Brand Theme -->
+  <meta name="theme-color" content="#1f1f1f">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobilestyles.css">
+   <link rel="icon" href="/img/favicon.png" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+  <!-- Scroll Animation Library (optional) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+<body>  
+<header class="site-header">
+  <a href="index.html" class="logo">
+    <img src="img/logo.png" alt="Brand Name Logo">
+  </a>
+</header>
+<section class="explainer">
+  <video
+    class="explainer-video"
+    src="img/herovideoslowwide.mp4"
+    autoplay
+    muted
+    loop
+    playsinline>
+  </video>
+
+  <button class="video-toggle" aria-label="Pause video">❚❚</button>
+</section>
+<section class="post-video-cta">
+  <h2 class="hero-p fade-in">
+    Delays, unclear timelines, and reactive logistics hold fast-growing D2C brands back.
+    Dhanshuk Ltd. replaces friction with speed and operational clarity.
+  </h2>
+
+  <button class="primary-btn get-started-btn fade-in">Get Started</button>
+</section>
+<!-- Contact Modal -->
+<div class="contact-modal" id="contactModal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    
+    <div class="modal-form-wrapper">
+      <h2>Get Started</h2>
+      <p class="form-subtitle">Ready to transform your logistics? Let's talk.</p>
+      
+      <form id="modal-contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-name">Full Name</label>
+            <input type="text" id="modal-name" name="name" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="modal-email">Email Address</label>
+            <input type="email" id="modal-email" name="email" placeholder="john@company.com" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-firm">Firm Name</label>
+            <input type="text" id="modal-firm" name="firm" placeholder="Your Company" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="modal-phone">Contact Number</label>
+            <input type="tel" id="modal-phone" name="phone" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="modal-location">Location</label>
+          <input type="text" id="modal-location" name="location" placeholder="City, Country" required>
+        </div>
+        
+        <button type="submit" class="primary-btn form-submit">Submit Inquiry</button>
+        
+        <p class="form-status" id="modal-form-status"></p>
+      </form>
+    </div>
+  </div>
+</div>
+<section class="secondscroll fade-in">
+  <div class="secondscroll-content">
+    <div class="secondscroll-text">
+      <h1>From Chaos to Control</h1>
+    </div>
+
+    <div class="secondscroll-media"></div>
+  </div>
+</section>
+<section>
+  <div class="why-us fade-in">
+    <div class="whyus-heading">
+      <h2>What You Get with Dhanshuk</h2>
+    </div>
+
+    <div class="whyus-container">
+
+      <div class="whyus-item">
+        <span class="material-symbols-outlined whyus-icon">bolt</span>
+        <h3>Speed</h3>
+        <p>Fast, reliable air logistics solutions designed to keep your D2C brand moving forward.</p>
+      </div>
+
+      <div class="whyus-item">
+        <span class="material-symbols-outlined whyus-icon">trending_up</span>
+        <h3>Scalability</h3>
+        <p>Flexible logistics services that grow with your business, ensuring seamless operations at every stage.</p>
+      </div>
+
+      <div class="whyus-item">
+        <span class="material-symbols-outlined whyus-icon">verified</span>
+        <h3>Certainty</h3>
+        <p>Transparent processes and clear timelines that give you confidence in your logistics operations.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="services-section fade-in">
+  <div class="services-container">
+    <h2>Our Services</h2>
+    <p class="section-subtitle">Comprehensive air logistics solutions tailored for D2C brands</p>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">local_shipping</span>
+        <h3>Air Freight Solutions</h3>
+        <p>Express and economy air freight services connecting your brand to global markets with speed and reliability.</p>
+      </div>
+      
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">inventory_2</span>
+        <h3>Customs Clearance</h3>
+        <p>Streamlined customs processing and documentation to keep your shipments moving without delays.</p>
+      </div>
+      
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">route</span>
+        <h3>Route Optimization</h3>
+        <p>Data-driven route planning that reduces transit times and costs while maintaining service quality.</p>
+      </div>
+      
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">monitoring</span>
+        <h3>Real-time Tracking</h3>
+        <p>Complete visibility of your shipments from origin to destination with live tracking and updates.</p>
+      </div>
+      
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">warehouse</span>
+        <h3>Warehousing & Fulfillment</h3>
+        <p>Strategic warehousing locations and fulfillment services to support your growth across markets.</p>
+      </div>
+      
+      <div class="service-card">
+        <span class="material-symbols-outlined service-icon">support_agent</span>
+        <h3>Dedicated Support</h3>
+        <p>24/7 customer support team ready to assist with your logistics needs and resolve any issues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="how-it-works">
+  <div class="hiw-sticky">
+
+    <h2 class="hiw-heading">How It Works</h2>
+
+    <!-- SHARED GRID -->
+    <div class="hiw-grid">
+
+      <!-- Timeline row -->
+     <div class="hiw-timeline">
+  <div class="timeline-base"></div>
+
+  <span class="timeline-dot" data-step="0"></span>
+  <span class="timeline-dot" data-step="1"></span>
+  <span class="timeline-dot" data-step="2"></span>
+
+  <div class="timeline-line"></div>
+</div>
+
+
+      <!-- Content row -->
+      <div class="hiw-step">
+        <h3>Plan</h3>
+        <p>Routes, volumes, timelines.</p>
+      </div>
+
+      <div class="hiw-step">
+        <h3>Move</h3>
+        <p>Optimised air logistics.</p>
+      </div>
+
+      <div class="hiw-step">
+        <h3>Scale</h3>
+        <p>Without operational friction.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="comparison-section fade-in">
+  <div class="comparison-container">
+    <h2>Built for Modern D2C</h2>
+    
+    <div class="comparison-table">
+      <div class="comparison-row comparison-header">
+        <div class="comparison-cell"></div>
+        <div class="comparison-cell">Traditional Logistics</div>
+        <div class="comparison-cell highlight">Dhanshuk</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell label">Speed</div>
+        <div class="comparison-cell">Slow</div>
+        <div class="comparison-cell highlight">Fast</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell label">Approach</div>
+        <div class="comparison-cell">Reactive</div>
+        <div class="comparison-cell highlight">Structured</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-cell label">Visibility</div>
+        <div class="comparison-cell">Opaque</div>
+        <div class="comparison-cell highlight">Predictable</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Industries Carousel - Replace the entire section -->
+<section class="industries-carousel" id="industries">
+  <div class="carousel-track">
+    <div class="carousel-item">E-Commerce</div>
+    <div class="carousel-item">D2C Brands</div>
+    <div class="carousel-item">Fashion & Apparel</div>
+    <div class="carousel-item">Beauty & Cosmetics</div>
+    <div class="carousel-item">Electronics</div>
+    <div class="carousel-item">Health & Wellness</div>
+    <div class="carousel-item">Home & Living</div>
+    <div class="carousel-item">Food & Beverage</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="carousel-item">E-Commerce</div>
+    <div class="carousel-item">D2C Brands</div>
+    <div class="carousel-item">Fashion & Apparel</div>
+    <div class="carousel-item">Beauty & Cosmetics</div>
+    <div class="carousel-item">Electronics</div>
+    <div class="carousel-item">Health & Wellness</div>
+    <div class="carousel-item">Home & Living</div>
+    <div class="carousel-item">Food & Beverage</div>
+  </div>
+</section>
+
+<!-- FAQ Section - Add before contact form -->
+<section class="faq-section fade-in">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="section-subtitle">Everything you need to know about our logistics services</p>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What regions do you serve?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>We provide air logistics services across North America, Europe, Asia-Pacific, and emerging markets. Our network connects major commercial hubs and enables fast delivery to key D2C markets worldwide.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How quickly can you handle shipments?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>Our express air freight services can deliver within 24-48 hours to major destinations. Standard air freight typically takes 3-5 business days. Transit times vary by route and customs requirements.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What makes Dhanshuk different from traditional freight forwarders?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>We're built specifically for D2C brands with fast-moving inventory. Unlike traditional forwarders, we offer transparent pricing, real-time tracking, predictable timelines, and dedicated support teams that understand the urgency of direct-to-consumer operations.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you handle customs clearance?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, we manage all customs documentation, duties, and clearance procedures. Our team ensures compliance with import/export regulations and works to minimize delays at customs checkpoints.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What are your minimum shipment requirements?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>We work with businesses of all sizes. Whether you're shipping a few packages or full pallets, our services are designed to scale with your needs. Contact us to discuss volume-based pricing options.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I track my shipments?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          <p>All shipments include real-time tracking through our online portal. You'll receive automated updates at key milestones and can view your shipment's location and status 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Form Section -->
+<section class="contact-section" id="get-started">
+  <div class="contact-container">
+    <div class="glass-form-wrapper fade-in">
+      <h2>Get Started</h2>
+      <p class="form-subtitle">Ready to transform your logistics? Let's talk.</p>
+      
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firm">Firm Name</label>
+            <input type="text" id="firm" name="firm" placeholder="Your Company" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="City, Country" required>
+        </div>
+        
+        <button type="submit" class="primary-btn form-submit">Submit Inquiry</button>
+        
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+<script src="script.js"></script>
+
+<!-- Footer -->
+<footer class="lp-footer">
+  <div class="lp-footer-inner">
+    
+    <img src="img/whitelogo.svg" alt="Dhanshuk Ltd" class="lp-footer-logo">
+
+    <p class="lp-footer-tagline">
+      Air logistics built for speed, scale, and certainty.
+    </p>
+
+    <div class="lp-footer-contact">
+      <a href="mailto:hello@dhanshuk.com">hello@dhanshuk.com</a>
+      <span>•</span>
+      <a href="tel:+1234567890">+1 (234) 567-890</a>
+    </div>
+
+    <p class="lp-footer-meta">
+      © 2025 Dhanshuk Ltd. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+</html>
