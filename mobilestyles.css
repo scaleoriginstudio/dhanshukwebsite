@@ -677,3 +677,10 @@
     padding: 2rem 1rem;
   }
 }
+
+/* REMOVE EMPTY COMPARISON CARD ON MOBILE */
+@media (max-width: 768px) {
+  .comparison-row.comparison-header {
+    display: none !important;
+  }
+}

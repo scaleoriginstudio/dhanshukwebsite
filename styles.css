@@ -727,7 +727,7 @@ body.modal-open {
 }
 
 .glass-form-wrapper h2 {
-  color: var(--color-light);
+  color: var(--color-dark);
   text-align: center;
   margin-bottom: 0.75rem;
   font-size: 2.5rem;
@@ -735,7 +735,7 @@ body.modal-open {
 }
 
 .form-subtitle {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-dark);
   text-align: center;
   margin-bottom: 3rem;
   font-size: 1.1rem;
@@ -747,12 +747,14 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  color:var(--color-dark);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  
 }
 
 .form-group {
@@ -762,7 +764,7 @@ body.modal-open {
 }
 
 .form-group label {
-  color: var(--color-light);
+  color: var(--color-dark);
   font-family: var(--body-font-family);
   font-weight: 600;
   font-size: 0.9rem;
@@ -781,13 +783,13 @@ body.modal-open {
   
   font-family: var(--body-font-family);
   font-size: 1rem;
-  color: var(--color-light);
+  color: var(--color-dark);
   
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-group input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-dark);
 }
 
 .form-group input:hover {
@@ -1249,4 +1251,18 @@ body.modal-open {
   font-size: 0.9rem;
   color: var(--color-light);
   margin: 0;
+}
+
+/* FOOTER VISIBILITY SAFETY NET */
+.site-footer,
+.site-footer p,
+.site-footer a,
+.site-footer li,
+.footer-about,
+.footer-contact-info {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-column h4 {
+  color: #ffffff;
 }
