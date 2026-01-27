@@ -1203,7 +1203,7 @@ body.modal-open {
   font-family: var(--heading-font-family);
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-light);
 }
 
 .stat-label {
@@ -1259,8 +1259,9 @@ body.modal-open {
 .site-footer a,
 .site-footer li,
 .footer-about,
-.footer-contact-info {
-  color: rgba(255, 255, 255, 0.85);
+.footer-contact-info,
+.stat-number, .stat-label {
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .footer-column h4 {
