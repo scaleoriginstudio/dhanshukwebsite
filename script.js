@@ -116,18 +116,16 @@ function initScrollAnimation() {
       const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
 
       // Only prevent default if we're actually animating
-      if (shouldScrollDown || shouldScrollUp) {
+      if (shouldScrollDown) {
         e.preventDefault();
         locked = true;
 
         if (shouldScrollDown) {
           currentStep++;
-        } else if (shouldScrollUp) {
-          currentStep--;
-        }
+        } 
 
         updateTimeline();
-        setTimeout(() => locked = false, 450);
+        setTimeout(() => locked = false, 250);
       }
     }, { passive: false });
   }
