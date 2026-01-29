@@ -199,7 +199,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Handle modal form submission
+// Handle modal form submission - FIXED VERSION
 modalForm.addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -212,20 +212,29 @@ modalForm.addEventListener('submit', async function (e) {
     email: document.getElementById('modal-email').value,
     firm: document.getElementById('modal-firm').value,
     phone: document.getElementById('modal-phone').value,
-    location: document.getElementById('modal-location').value
+    location: document.getElementById('modal-location').value,
+    project: document.getElementById('modal-project').value
   };
 
-  try {
-    await fetch('https://script.google.com/macros/s/AKfycbxViy5Q6Iq3nkN9GI5PKG-xEw7EupNdMkNeTpO7t3YTcoNiDCqXcp7dHxLpkrRSL-e3/exec', {
+  // Debug logging - check browser console
+  console.log('Modal form data being sent:', data);
 
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbxgGnfM6yi0HPgcszBu0NvsVX4sZozgbjwJWiLTaUaOXPW6eCK8O-HUKj5T0Gtg78_4/exec', {
       method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(data)
     });
 
+    console.log('Modal form submitted successfully');
     modalStatus.textContent = "Thank you! We'll be in touch shortly.";
     modalStatus.className = 'form-status success';
     modalForm.reset();
-  } catch {
+  } catch (error) {
+    console.error('Modal form submission error:', error);
     modalStatus.textContent = "Something went wrong. Please try again.";
     modalStatus.className = 'form-status error';
   }
@@ -233,3 +242,53 @@ modalForm.addEventListener('submit', async function (e) {
   submitBtn.textContent = 'Submit Inquiry';
   submitBtn.disabled = false;
 });
+
+// Handle CTA form submission - FIXED VERSION
+const ctaForm = document.getElementById('cta-contact-form');
+const ctaStatus = document.getElementById('cta-form-status');
+
+if (ctaForm) {
+  ctaForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const submitBtn = ctaForm.querySelector('.form-submit');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const data = {
+      name: document.getElementById('cta-name').value,
+      email: document.getElementById('cta-email').value,
+      firm: document.getElementById('cta-firm').value,
+      phone: document.getElementById('cta-phone').value,
+      location: document.getElementById('cta-location').value,
+      project: document.getElementById('cta-project').value
+    };
+
+    // Debug logging - check browser console
+    console.log('CTA form data being sent:', data);
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxgGnfM6yi0HPgcszBu0NvsVX4sZozgbjwJWiLTaUaOXPW6eCK8O-HUKj5T0Gtg78_4/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      console.log('CTA form submitted successfully');
+      ctaStatus.textContent = "Thank you! We'll be in touch shortly.";
+      ctaStatus.className = 'form-status success';
+      ctaForm.reset();
+
+    } catch (error) {
+      console.error('CTA form submission error:', error);
+      ctaStatus.textContent = "Something went wrong. Please try again.";
+      ctaStatus.className = 'form-status error';
+    }
+
+    submitBtn.textContent = 'Submit Inquiry';
+    submitBtn.disabled = false;
+  });
+}
