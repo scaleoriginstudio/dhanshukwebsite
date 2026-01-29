@@ -80,7 +80,8 @@ function initScrollAnimation() {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const stepIndex = Array.from(steps).indexOf(entry.target);
-            if (stepIndex !== -1 && stepIndex !== currentStep) {
+            // Only move forward, never backward
+            if (stepIndex !== -1 && stepIndex > currentStep) {
               currentStep = stepIndex;
               updateTimeline();
             }
@@ -96,7 +97,7 @@ function initScrollAnimation() {
     steps.forEach(step => stepObserver.observe(step));
     
   } else {
-    // Desktop: Use wheel event for scroll hijacking
+    // Desktop: Use wheel event for scroll hijacking (forward only)
     window.addEventListener('wheel', (e) => {
       if (!section) return;
 
@@ -111,19 +112,14 @@ function initScrollAnimation() {
 
       if (locked) return;
 
-      // Determine if we should animate
-      // const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
-      const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
+      // Only allow scrolling DOWN (forward), not UP (backward)
+      const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
 
-      // Only prevent default if we're actually animating
+      // Only prevent default and animate if scrolling down
       if (shouldScrollDown) {
         e.preventDefault();
         locked = true;
-
-        if (shouldScrollDown) {
-          currentStep++;
-        } 
-
+        currentStep++;
         updateTimeline();
         setTimeout(() => locked = false, 250);
       }
@@ -131,16 +127,16 @@ function initScrollAnimation() {
   }
 }
 
-// // Handle window resize
-// let resizeTimer;
-// window.addEventListener('resize', () => {
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(() => {
-//     updateTimeline();
-//     // Reinitialize scroll animation if switching between mobile/desktop
-//     initScrollAnimation();
-//   }, 250);
-// });
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    updateTimeline();
+    // Reinitialize scroll animation if switching between mobile/desktop
+    initScrollAnimation();
+  }, 250);
+});
 
 // Initialize on load
 updateTimeline();
