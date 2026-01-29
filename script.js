@@ -112,7 +112,7 @@ function initScrollAnimation() {
       if (locked) return;
 
       // Determine if we should animate
-      const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
+      // const shouldScrollDown = e.deltaY > 0 && currentStep < dots.length - 1;
       const shouldScrollUp = e.deltaY < 0 && currentStep > 0;
 
       // Only prevent default if we're actually animating
