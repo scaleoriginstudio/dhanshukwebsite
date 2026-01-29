@@ -131,16 +131,16 @@ function initScrollAnimation() {
   }
 }
 
-// Handle window resize
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    updateTimeline();
-    // Reinitialize scroll animation if switching between mobile/desktop
-    initScrollAnimation();
-  }, 250);
-});
+// // Handle window resize
+// let resizeTimer;
+// window.addEventListener('resize', () => {
+//   clearTimeout(resizeTimer);
+//   resizeTimer = setTimeout(() => {
+//     updateTimeline();
+//     // Reinitialize scroll animation if switching between mobile/desktop
+//     initScrollAnimation();
+//   }, 250);
+// });
 
 // Initialize on load
 updateTimeline();
