@@ -23,6 +23,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="mobilestyles.css">
+  <link rel="stylesheet" href="cookies.css">
    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
@@ -415,7 +416,21 @@
   </div>
 </section>
 </body>
+<!-- Cookie Consent Script (loads first) -->
+<script src="cookies.js"></script>
+<!-- Main Script -->
 <script src="script.js"></script>
+
+<!-- Script to open cookie settings from footer link -->
+<script>
+  document.getElementById('cookie-settings-link-footer').addEventListener('click', (e) => {
+    e.preventDefault();
+    const modal = document.getElementById('cookie-settings-modal');
+    if (modal) {
+      modal.style.display = 'flex';
+    }
+  });
+</script>
 
 <!-- Footer -->
 <!-- Footer -->
@@ -510,6 +525,8 @@ United Kingdom</p>
     <div class="footer-bottom">
       <p>© 2025 Dhanshuk Ltd. All rights reserved.</p>
       <p>Built for modern B2C brands</p>
+       <a href="#" id="cookie-settings-link-footer" class="cookie-settings-link">Cookie Settings</a> | 
+        <a href="cookie-policy.html">Cookie Policy</a>
     </div>
   </div>
 </footer>
