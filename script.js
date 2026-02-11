@@ -216,7 +216,7 @@ modalForm.addEventListener('submit', async function (e) {
   console.log('Modal form data being sent:', data);
 
   try {
-    await fetch('https://script.google.com/macros/s/AKfycbxgGnfM6yi0HPgcszBu0NvsVX4sZozgbjwJWiLTaUaOXPW6eCK8O-HUKj5T0Gtg78_4/exec', {
+    await fetch('https://script.google.com/macros/s/AKfycbwwXJecDPkHHuOOYWp_UCGZiEV--0f7Tc9Mi26O9XBIT_-CSxEJZ7D4QAkz_na_LOmG/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
@@ -264,7 +264,7 @@ if (ctaForm) {
     console.log('CTA form data being sent:', data);
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbxgGnfM6yi0HPgcszBu0NvsVX4sZozgbjwJWiLTaUaOXPW6eCK8O-HUKj5T0Gtg78_4/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwwXJecDPkHHuOOYWp_UCGZiEV--0f7Tc9Mi26O9XBIT_-CSxEJZ7D4QAkz_na_LOmG/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
