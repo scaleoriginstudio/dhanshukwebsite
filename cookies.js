@@ -217,7 +217,7 @@ class CookieConsent {
 
   loadGoogleAnalytics() {
     // Replace 'G-XXXXXXXXXX' with your actual Google Analytics ID
-    const GA_ID = 'G-XXXXXXXXXX'; // TODO: Add your GA4 ID here
+    const GA_ID = 'G-BYPF06QF8S'; // TODO: Add your GA4 ID here
     
     // Check if already loaded
     if (window.gtag) return;
